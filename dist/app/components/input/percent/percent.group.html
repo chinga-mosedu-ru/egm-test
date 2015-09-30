@@ -1,0 +1,6 @@
+
+<div class="row">
+  <div ng-repeat="(k,item) in ct.items" class="col-md-12">
+    <percent-control index="k" label="item.Name" percent="item.Percent" locked="item.locked" max="ct.max"></percent-control>
+  </div>
+</div>
