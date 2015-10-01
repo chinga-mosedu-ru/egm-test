@@ -25,6 +25,10 @@ class PercentSliderController {
     'ngInject';
     this.val = this.percent;
     this.$scope = $scope;
+    this.$scope.$watch('ct.percent', (current)=> {
+      console.log(this.percent);
+      this.val = current
+    });
   }
 
   startVal() {
@@ -35,12 +39,14 @@ class PercentSliderController {
 
 
     if (this.percent > this.max) {
-
       this.percent = this.max;
-
     }
 
+    if (this.percent < 0) {
+      this.percent = 0;
+    }
 
+    console.log(this.val, '->', this.percent);
     this.$scope.$emit('changed', {
       diff: this.val - this.percent
     });

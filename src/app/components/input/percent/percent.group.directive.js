@@ -76,7 +76,7 @@ class PercentGroup {
         return;
       }
 
-      if (item.Percent + diff < 0) {
+      if (parseFloat(item.Percent) + parseFloat(diff) < 0) {
 
         let newDiff = parseFloat(diff) + parseFloat(item.Percent);
         item.Percent = 0;
@@ -90,7 +90,7 @@ class PercentGroup {
         return;
       }
 
-      if (item.Percent + diff > this.max) {
+      if (parseFloat(item.Percent) + parseFloat(diff) > this.max) {
 
         let newDiff = parseFloat(diff) - parseFloat(this.max - item.Percent);
 
